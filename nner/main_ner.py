@@ -93,13 +93,13 @@ if __name__ == '__main__':
                                            num_labels=num_labels,
                                            output_hidden_states=True)  # if you want to get all layer hidden states
     else:
-        config = BertConfig.from_json_file('/data/lan/BiBERT/saved_model/'+args.bert_model+'/bert_config.json') # config file
+        config = BertConfig.from_json_file(args.bert_model+'/bert_config.json') # config file
         config.num_labels = num_labels
         config.output_hidden_states = True
         #print('num_labels: ', num_labels)
         #sys.exit()
         model = BertForNER(config=config)
-        model.load_state_dict(torch.load('/data/lan/BiBERT/saved_model/'+args.bert_model+'/pytorch_model.bin', map_location=device), strict=False) # pytorch ckpt file
+        model.load_state_dict(torch.load(args.bert_model+'/pytorch_model.bin', map_location=device), strict=False) # pytorch ckpt file
 
     model.set_label_map(label_list)
 
@@ -168,7 +168,7 @@ if __name__ == '__main__':
         #else:
         lower_case_flag=True
         print('lower_case_flag: ', lower_case_flag)
-        tokenizer = BertTokenizer.from_pretrained('/data/lan/BiBERT/saved_model/'+args.bert_model+'/vocab.txt', do_lower_case=lower_case_flag) # bert vocab file
+        tokenizer = BertTokenizer.from_pretrained(args.bert_model+'/vocab.txt', do_lower_case=lower_case_flag) # bert vocab file
         tokenizer.bos_token = '[CLS]'
         tokenizer.eos_token = '[SEP]'
         tokenizer.unk_token = '[UNK]'
