@@ -9,4 +9,4 @@ transformers==2.4.1
 
 2. Run zero-shot experiment:
 ```
-python main_nner.py --source_language en --target_language ar --bert_model GigaBERT-v3 --output_dir save --exp_name zeroshot --gpuid 0
+python main_ner.py --source_language en --target_language ar --bert_model GigaBERT-v3 --output_dir save --exp_name zeroshot --gpuid 0
