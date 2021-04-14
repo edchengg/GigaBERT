@@ -7,6 +7,6 @@ transformers==2.4.1
 ## How to run
 1. Please download checkpoint folders (e.g., GigaBERT-v3). Each folder contains config.json (model configuration file), pytorch_model.bin (pytorch version model weights), and vocab.txt (for tokenizer). Please see [Wuwei Lan](https://github.com/lanwuwei/GigaBERT)'s repo for checkpoints.
 
-2. Please unzip data.zip.
+2. Please email me (yang.chen@cc.gatech.edu) for data.zip and unzip data.zip.
 
 3. Go to arl or re folder to run code.
