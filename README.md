@@ -10,3 +10,6 @@ This repo contains code and data for downstream tasks in [GigaBERT](https://arxi
 
 ## Checkpoints
 Please see [Wuwei Lan](https://github.com/lanwuwei/GigaBERT)'s repo for checkpoints.
+
+## Funding Acknowledgment
+This material is based in part on research sponsored by IARPA via the BETTER program (2019-19051600004).
