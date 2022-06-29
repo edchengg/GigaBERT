@@ -8,24 +8,20 @@ This repo contains code and data for downstream tasks in [GigaBERT](https://arxi
   	  year       = {2020}
   	} 
 
-## Huggingface
+## Huggingface Supported
 - [Arabic Relation Extraction](https://huggingface.co/ychenNLP/arabic-relation-extraction)
 ```python
-from transformers import pipeline, AutoModelForTokenClassification, AutoTokenizer, AutoModelForSequenceClassification
 re_model = AutoModelForSequenceClassification.from_pretrained("ychenNLP/arabic-relation-extraction")
 re_tokenizer = AutoTokenizer.from_pretrained("ychenNLP/arabic-relation-extraction")
-re_pip = pipeline("text-classification", model=re_model, tokenizer=re_tokenizer)
 ```
 - [Arabic NER](https://huggingface.co/ychenNLP/arabic-ner-ace)
 ```python
-from transformers import pipeline, AutoModelForTokenClassification, AutoTokenizer, AutoModelForSequenceClassification
 ner_model = AutoModelForTokenClassification.from_pretrained("ychenNLP/arabic-ner-ace")
 ner_tokenizer = AutoTokenizer.from_pretrained("ychenNLP/arabic-ner-ace")
-ner_pip = pipeline("ner", model=ner_model, tokenizer=ner_tokenizer, grouped_entities=True)
 ```
 ## Arabic Relation Extraction Pipeline
 - NER --> Relation Extraction
-
+- check ```relation_extraction/re_pipeline.py''' for processing functions
 ```python
 from transformers import pipeline, AutoModelForTokenClassification, AutoTokenizer, AutoModelForSequenceClassification
 ner_model = AutoModelForTokenClassification.from_pretrained("ychenNLP/arabic-ner-ace")
