@@ -53,7 +53,8 @@ def post_process_re_output(re_output, text_input, ner_output):
     return template
 
 
-text_input = 'قال وزير العدل التركي بكير بوزداغ إن أنقرة تريد 12 مشتبهاً بهم من فنلندا و 21 من السويد'
+text_input = """ويتزامن ذلك مع اجتماع بايدن مع قادة الدول الأعضاء في الناتو في قمة موسعة في العاصمة الإسبانية، مدريد."""
+
 ner_output = ner_pip(text_input)  # inference NER tags
 
 re_input = process_ner_output(ner_output, text_input)  # prepare a pair of entity and predict relation type
@@ -71,23 +72,19 @@ for ent in re_ner_output["entity"]:
 print('====Relation====')
 for rel in re_ner_output["relation"]:
     print('{}--{}:{}'.format(rel['arg1']['word'], rel['arg2']['word'], rel['relation_type']['label']))
-
 '''
-Sentence:  قال وزير العدل التركي بكير بوزداغ إن أنقرة تريد 12 مشتبهاً بهم من فنلندا و 21 من السويد
+Sentence:  ويتزامن ذلك مع اجتماع بايدن مع قادة الدول الأعضاء في الناتو في قمة موسعة في العاصمة الإسبانية، مدريد.
 ====Entity====
-وزير--PER
-العدل--ORG
-التركي--GPE
-بكير بوزداغ--PER
-انقرة--GPE
-مشتبها بهم--PER
-فنلندا--GPE
-21--PER
-السويد--GPE
+بايدن--PER
+قادة--PER
+الدول--GPE
+الناتو--ORG
+العاصمة--GPE
+الاسبانية--GPE
+مدريد--GPE
 ====Relation====
-وزير--العدل:ORG-AFF
-مشتبها بهم--فنلندا:PHYS
-21--السويد:PHYS
+قادة--الناتو:ORG-AFF
+العاصمة--الاسبانية:PART-WHOLE
 '''
 
 
