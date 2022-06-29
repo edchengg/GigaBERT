@@ -21,7 +21,7 @@ ner_tokenizer = AutoTokenizer.from_pretrained("ychenNLP/arabic-ner-ace")
 ```
 ## Arabic Relation Extraction Pipeline
 - NER --> Relation Extraction
-- check ```relation_extraction/re_pipeline.py''' for processing functions
+- check ```relation_extraction/re_pipeline.py``` for processing functions
 ```python
 from transformers import pipeline, AutoModelForTokenClassification, AutoTokenizer, AutoModelForSequenceClassification
 ner_model = AutoModelForTokenClassification.from_pretrained("ychenNLP/arabic-ner-ace")
