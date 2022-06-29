@@ -204,3 +204,25 @@ trainer.log_metrics("test_ar", metric_ar)
 
 tf_model = TFAutoModelForSequenceClassification.from_pretrained(save_path, from_pt=True)
 tf_model.save_pretrained(save_path)
+
+
+'''
+***** test_en metrics *****
+  epoch                      =       10.0
+  test_en_f1                 =     0.7205
+  test_en_loss               =     0.2983
+  test_en_precision          =     0.7431
+  test_en_recall             =     0.6992
+  test_en_runtime            = 0:00:06.26
+  test_en_samples_per_second =   1576.247
+  test_en_steps_per_second   =     49.343
+***** test_ar metrics *****
+  epoch                      =       10.0
+  test_ar_f1                 =     0.7259
+  test_ar_loss               =     0.0935
+  test_ar_precision          =     0.7379
+  test_ar_recall             =     0.7143
+  test_ar_runtime            = 0:00:16.49
+  test_ar_samples_per_second =   1137.425
+  test_ar_steps_per_second   =     35.577
+'''
