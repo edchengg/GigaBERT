@@ -8,7 +8,12 @@ This repo contains code and data for downstream tasks in [GigaBERT](https://arxi
   	  year       = {2020}
   	} 
 
-## Arabic Relation Extraction System
+## Huggingface
+- [Arabic Relation Extraction](https://huggingface.co/ychenNLP/arabic-relation-extraction)
+- [Arabic NER](https://huggingface.co/ychenNLP/arabic-ner-ace)
+
+## Arabic Relation Extraction Pipeline
+- NER --> Relation Extraction
 
 ```python
 from transformers import pipeline, AutoModelForTokenClassification, AutoTokenizer, AutoModelForSequenceClassification
@@ -40,7 +45,7 @@ print('====Relation====')
 for rel in re_ner_output["relation"]:
   print('{}--{}:{}'.format(rel['arg1']['word'], rel['arg2']['word'], rel['relation_type']['label']))
   
-  
+'''
 Sentence:  ويتزامن ذلك مع اجتماع بايدن مع قادة الدول الأعضاء في الناتو في قمة موسعة في العاصمة الإسبانية، مدريد.
 ====Entity====
 بايدن--PER
@@ -53,6 +58,7 @@ Sentence:  ويتزامن ذلك مع اجتماع بايدن مع قادة ال
 ====Relation====
 قادة--الناتو:ORG-AFF
 العاصمة--الاسبانية:PART-WHOLE
+'''
 ```
 
 ## Funding Acknowledgment
